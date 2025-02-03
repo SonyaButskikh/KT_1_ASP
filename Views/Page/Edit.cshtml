@@ -1,0 +1,23 @@
+﻿@using KT_1_ASP
+@using KT_1_ASP.Models
+@model string
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Message</h2>
+<form method="post">
+    <label for="editor">Напишите ваше сообщение:</label>
+    <textarea id="editor" name="message" class="form-control">@Model</textarea>
+
+    <button type="submit" class="btn btn-primary mt-2">Сохранить</button>
+</form>
+
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>tinymce.init({
+        selector: '#editor',
+        plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+        toolbar_mode: 'floating'
+    });</script>
